@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <DataExchange_Iris>
+            <active>true</active>
+            <codePool>local</codePool>
+        </DataExchange_Iris>
+    </modules>
+</config>

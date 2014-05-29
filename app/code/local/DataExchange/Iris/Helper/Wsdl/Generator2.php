@@ -219,7 +219,7 @@ class My_SoapServer_Class {
 }
 
 
-class DataExchange_Iris_Helper_Wsdl_Vitamincenter_Generator {
+class DataExchange_Iris_Helper_Wsdl_Generator2 {
     public function generateWsdl(){
         $autodiscover = new Zend_Soap_AutoDiscover('Zend_Soap_Wsdl_Strategy_ArrayOfTypeComplex');
         $autodiscover->setClass( 'My_SoapServer_Class' );

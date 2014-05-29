@@ -1,4 +1,4 @@
-cd mage<?php
+<?php
 /**
  * Magento
  *

@@ -1700,6 +1700,23 @@ class DataExchange_Iris_Model_Api_Resource extends Mage_Api_Model_Resource_Abstr
             return false;
         }
     }
+    
+    
+    public function linkConfigurable($skuconfigurable,$skussimple) {
+        try {
+            $this->__setErrorHandlers();
+            $this->__logCall(__METHOD__, "started");
+            
+            $return = new ReturnObject();
+            $return->result_code = "SUCCESS";
+            
+            Mage::helper("iris/product")->updateConfigurableProduct($skuconfigurable, $skussimple);            
+            $this->__logCall(__METHOD__, "ended");
+            return $return;
+        } catch (Exception $e) {
+            $this->__logCall(__METHOD__, "Exception: " . $e->getMessage(), Zend_Log::ERR);
+        }
+    }
 
 }
 

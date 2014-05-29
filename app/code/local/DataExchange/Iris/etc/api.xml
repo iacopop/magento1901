@@ -90,7 +90,12 @@
 	                    <title>Product Exists</title>
 	                    <method>productsExists</method>
                             <acl>iris/resource/productsExists</acl>
-	                </productsexists>                                             
+	                </productsexists>
+	                <linkconfigurable translate="title" module="iris">
+	                    <title>Link configurable</title>
+	                    <method>linkConfigurable</method>
+                            <acl>iris/resource/linkConfigurable</acl>
+	                </linkconfigurable>                                                                     
 	            </methods>          
             </iris_resource>
         </resources> 

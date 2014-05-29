@@ -12,6 +12,14 @@
                 </all>
             </complexType>  
             
+            <complexType name="ArrayOfString">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>            
+            
             <complexType name="ExportPrice">
                 <all>
                     <element name="sku" type="xsd:string" />
@@ -521,7 +529,16 @@
     </message>
     <message name="dataexchangeResourceProductsexistsResponse">
         <part name="skus" type="typens:SkuExistResult" />
-    </message>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+    </message>                                               
+    <!-- Link configurable to simple -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+    <message name="dataexchangeResourceLinkconfigurableRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="skuconfigurable" type="xsd:string" />        
+        <part name="skussimple" type="typens:ArrayOfString"/>
+    </message>
+    <message name="dataexchangeResourceLinkconfigurableResponse">
+        <part name="result" type="typens:ReturnObject" />
+    </message>    
                                                                             
     <portType name="{{var wsdl.handler}}PortType">
         <operation name="dataexchangeResourceHello">
@@ -616,7 +633,12 @@
             <documentation>change group</documentation>
             <input message="typens:dataexchangeResourceProductsexistsRequest" />
             <output message="typens:dataexchangeResourceProductsexistsResponse" />
-        </operation>                                                                                                                                                                                                                                                                                             
+        </operation>                                                                                                                                                                                                                                                                                                     
+        <operation name="dataexchangeResourceLinkconfigurable">
+            <documentation>create configurable passing sku configurable and simple skus</documentation>
+            <input message="typens:dataexchangeResourceLinkconfigurableRequest" />
+            <output message="typens:dataexchangeResourceLinkconfigurableResponse" />
+        </operation>                                
     </portType>
     <binding name="{{var wsdl.handler}}Binding" type="typens:{{var wsdl.handler}}PortType">
         <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
@@ -773,5 +795,14 @@
                 <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
             </output>
         </operation>                                                                                             
+        <operation name="dataexchangeResourceLinkconfigurable">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>          
     </binding>
 </definitions>

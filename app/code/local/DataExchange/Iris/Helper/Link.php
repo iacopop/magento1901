@@ -100,7 +100,7 @@ class DataExchange_Iris_Helper_Link extends Mage_Core_Helper_Abstract {
      * @return type
      */
     public function generateUpsell($limit = 4,$checkOrder=false) {
-        $vitaminCompanyBrandId = 655;
+        $companyBrandId = 655;
         //prendo tutti i prodotti enabled e visibili
         $collection = Mage::getModel("catalog/product")->getCollection()
                 ->addAttributeToFilter("visibility", Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH)
@@ -157,7 +157,7 @@ class DataExchange_Iris_Helper_Link extends Mage_Core_Helper_Abstract {
             if ($order_items->count() == 0) {
                 $cats = $product->getCategoryIds();
                 if ($cats) {
-                    $topProducts = Mage::helper("iris/link")->getRandomProductForCategoryWithSpecificBrand($cats[0], $limit,$vitaminCompanyBrandId);
+                    $topProducts = Mage::helper("iris/link")->getRandomProductForCategoryWithSpecificBrand($cats[0], $limit,$companyBrandId);
                     if(count($topProducts) >= $limit){
                         $arrayCorrelati[$product->getId()] = $topProducts;
                     }else{

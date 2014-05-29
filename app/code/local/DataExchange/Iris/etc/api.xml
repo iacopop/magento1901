@@ -102,9 +102,9 @@
         <acl>
             <resources>
                 <iris translate="title" module="iris"> 
-                        <title>Vitamincenter Resources</title>
+                        <title>DataExchange Resources</title>
 	                <resource translate="title" module="iris">
-		            <title>Vitamincenter  Web Services</title>
+		            <title>DataExchange  Web Services</title>
 	                    <hello translate="title" module="iris">
 	                        <title>Hello</title>
 	                    </hello>

@@ -152,9 +152,7 @@ class OrderRow {
 
 class OrderCustomer {
     /** @var String  */
-    public $customer_id;    
-    /** @var String  */
-    public $vitamincenter_id;     
+    public $customer_id;      
     /** @var String  */
     public $customer_email;  
     /** @var String  */
@@ -226,7 +224,7 @@ class DataExchange_Iris_Helper_Order {
      * and the amount has been captured.
      */
     public function completeShipment($orderIncrementId, $shipmentTrackingNumber, $customerEmailComments, $shipmentCarrierCode, $shipmentCarrierTitle, $send_email = false) {
-        //doing invoice automatically for earn vitamin points
+        //doing invoice automatically for earn points
         $order = Mage::getModel('sales/order')
                 ->loadByIncrementId($orderIncrementId); 
         
@@ -541,11 +539,7 @@ class DataExchange_Iris_Helper_Order {
                
         $orderObject->customer_id = $order->getCustomerId();
         $customer = Mage::getModel("customer/customer")->load($order->getCustomerId());
-        if($customer->getId()){
-            $orderObject->vitamincenter_id = $customer->getData("vitamincenter_id");
-        }else{
-            $orderObject->vitamincenter_id = "";
-        }
+
         $orderObject->customer_email = $order->getCustomerEmail();
         
         $group = Mage::getModel('customer/group')->load($order->getCustomerGroupId());

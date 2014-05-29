@@ -1,6 +1,6 @@
 <?php
 
-class DataExchange_Iris_Model_Parser_Product_VitaminCsv_Default extends DataExchange_Iris_Model_Parser_Product_Csv_Default {
+class DataExchange_Iris_Model_Parser_Product_CustomerCsv_Default extends DataExchange_Iris_Model_Parser_Product_Csv_Default {
 
     private $filePath;
     private $ftpHost;
@@ -133,7 +133,7 @@ class DataExchange_Iris_Model_Parser_Product_VitaminCsv_Default extends DataExch
         }
     }
 
-    public function readDataVitamin($arrayProducts) {
+    public function readDataCustomer($arrayProducts) {
         $returnArray = array();
         $count = 0;
         foreach ($arrayProducts as $prod) {

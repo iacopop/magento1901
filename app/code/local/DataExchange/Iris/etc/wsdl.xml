@@ -264,7 +264,6 @@
             <complexType name="OrderCustomer">
                 <all>
                     <element name="customer_id" type="xsd:string" />
-                    <element name="vitamincenter_id" type="xsd:string" />
                     <element name="customer_email" type="xsd:string" />
                     <element name="customer_group" type="xsd:string" />
                     <element name="billing_firstname" type="xsd:string" />

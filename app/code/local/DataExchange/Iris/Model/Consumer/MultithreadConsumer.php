@@ -153,7 +153,7 @@ class DataExchange_Iris_Model_Consumer_MultithreadConsumer extends DataExchange_
         }
 
         /**
-         * Modo consumazione: se semplici e configurabili (alla vitamin ordinato per id di azione) non fa nulla
+         * Modo consumazione: se semplici e configurabili ( ordinato per id di azione) non fa nulla
          * da qui in avanti.
          * 
          * Se solo solo semplici fa query e chiama consumeconfigurable

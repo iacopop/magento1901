@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <iris translate="label" module="iris">
+            <label>Iris</label>
+            <sort_order>10</sort_order>
+        </iris>
+    </tabs>
+    <sections>
+        <iris_activation translate="label">
+            <label>Activation</label>
+            <tab>iris</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>  
+            <groups>
+                <inventory translate="label">
+                    <label>Inventory</label> 
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store> 
+                    <fields>
+                        <active>
+                            <label>Active Inventory Update</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <active_schedule>
+                            <label>Active Auto Scheduling</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <active>1</active>
+                            </depends>
+                        </active_schedule>
+                        <cron>
+                            <label>How often do you want the cron to run?</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <comment>Use Crontab Format (Eg. "*/5 * * * *" for every 5 minutes)</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <active>1</active>
+                                <active_schedule>1</active_schedule>
+                            </depends>
+                        </cron>
+                    </fields>
+                </inventory>
+                <product translate="label">
+                    <label>Product</label> 
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store> 
+                    <fields>
+                        <active>
+                            <label>Active Product Update</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <active_schedule>
+                            <label>Active Auto Scheduling</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <active>1</active>
+                            </depends>
+                        </active_schedule>
+                        <cron>
+                            <label>How often do you want the cron to run?</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <comment>Use Crontab Format (Eg. "*/5 * * * *" for every 5 minutes)</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <active>1</active>
+                                <active_schedule>1</active_schedule>
+                            </depends>
+                        </cron>
+                    </fields>
+                </product>
+            </groups>
+        </iris_activation>
+        <iris_inventory translate="label">
+            <label>Inventory</label>
+            <tab>iris</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>20</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>  
+            <groups>
+                <settings translate="label">
+                    <label>Settings</label> 
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store> 
+                    <fields>
+                        <stock>
+                            <label>Stock Status On Creation</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>cataloginventory/source_stock</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </stock>
+                        <default_stock>
+                            <label>Default stock</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <stock>1</stock>
+                            </depends>
+                        </default_stock>
+                        <default_parser>
+                            <label>Default Parser</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>iris/parser_inventory_options</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_parser>
+                        <path>
+                            <label>Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>From Relative path: magento_root/var/scambiodati</comment>
+                        </path>
+                        <file>
+                            <label>File</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </file>
+                    </fields>
+                </settings>
+            </groups>
+        </iris_inventory>
+        <iris_product translate="label">
+            <label>Product</label>
+            <tab>iris</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>30</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>  
+            <groups>
+                <settings translate="label">
+                    <label>Settings</label> 
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store> 
+                    <fields>
+                        <default_parser>
+                            <label>Default Parser</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>iris/parser_product_options</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_parser>
+                        <path>
+                            <label>Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>From Relative path: magento_root/var/scambiodati</comment>
+                        </path>
+                        <mode>
+                            <label>Product presence on dataentry</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>iris/parser_product_mode</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </mode>
+                        <status_configurable>
+                            <label>Product Configurable Status on creation</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>iris/parser_product_statusconfigurable</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </status_configurable> 
+                        <status_event>
+                            <label>Warning: Disable writing on index_event table</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>To be set only in first import</comment>                            
+                        </status_event>                                                 
+                        <type>
+                            <label>Type of parser</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>iris/parser_product_type</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </type>
+                        <file>
+                            <label>File</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <type>0</type>
+                            </depends>
+                        </file>
+                        <directory>
+                            <label>Directory</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <type>1</type>
+                            </depends>
+                            <comment>From Relative path: magento_root/var/scambiodati/import</comment>
+                        </directory>
+                    </fields>
+                </settings>
+            </groups>
+        </iris_product>                
+        <iris_customer translate="label">
+            <label>Customer</label>
+            <tab>iris</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>30</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>  
+            <groups>
+                <settings translate="label">
+                    <label>Settings</label> 
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store> 
+                    <fields>
+                        <reset_password>
+                            <label>Reset password at first login</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>ATTENZIONE: attivare questa funzionalità solo se sicuri</comment>
+                        </reset_password>
+                    </fields>
+                </settings>
+            </groups>
+        </iris_customer>        
+        <iris_files translate="label">
+            <label>Files</label>
+            <tab>iris</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>50</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>  
+            <groups>
+                <settings translate="label">
+                    <label>Settings</label> 
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store> 
+                    <fields>
+                        <invoice_directory>
+                            <label>Invoices Directory</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>From Relative path: magento_root/. Ex: ftp/invoices</comment>
+                        </invoice_directory>
+                    </fields>
+                </settings>
+            </groups>
+        </iris_files>                
+        <iris_orders translate="label">
+            <label>Orders</label>
+            <tab>iris</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>50</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>  
+            <groups>
+                <settings translate="label">
+                    <label>Settings</label> 
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store> 
+                    <fields>
+                        <order_status translate="label">
+                            <label>Order status after export</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_order_status</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order_status>
+                    </fields>
+                </settings>
+            </groups>
+        </iris_orders>                        
+    </sections>
+</config>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config> 
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <iris_activation translate="title" module="iris">
+                                        <title>Activation</title>
+                                        <sort_order>10</sort_order>
+                                    </iris_activation>	                                
+                                    <iris_inventory translate="title" module="iris">
+                                        <title>Inventory</title>
+                                        <sort_order>20</sort_order>
+                                    </iris_inventory>
+                                    <iris_product translate="title" module="iris">
+                                        <title>Product</title>
+                                        <sort_order>30</sort_order>
+                                    </iris_product>
+                                    <iris_customer translate="title" module="iris">
+                                        <title>Customer</title>
+                                        <sort_order>40</sort_order>
+                                    </iris_customer>   
+                                    <iris_files translate="title" module="iris">
+                                        <title>Files</title>
+                                        <sort_order>50</sort_order>
+                                    </iris_files>                                                                         
+                                    <iris_orders translate="title" module="iris">
+                                        <title>Orders</title>
+                                        <sort_order>50</sort_order>
+                                    </iris_orders>                                      
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <api>
+        <resources>
+            <iris_resource translate="title" module="iris">
+	            <title>Data Exchange WS</title>
+	            <model>iris/api_resource</model>
+	            <methods>
+	                <hello translate="title" module="iris">
+	                    <title>Hello</title>
+	                    <method>hello</method>
+                            <acl>iris/resource/hello</acl>
+	                </hello>                      
+	                <exporttest translate="title" module="iris">
+	                    <title>Retrieve test</title>
+	                    <method>exportTest</method>
+                            <acl>iris/resource/exporttest</acl>
+	                </exporttest>                                                
+	                <exportorders translate="title" module="iris">
+	                    <title>Retrieve Orders</title>
+	                    <method>exportOrders</method>
+                            <acl>iris/resource/exportorders</acl>
+	                </exportorders>      
+	                <exportprices translate="title" module="iris">
+	                    <title>Export Product Prices</title>
+	                    <method>exportPrices</method>
+                            <acl>iris/resource/exportprices</acl>
+	                </exportprices>                              
+	                <importsimpleproduct translate="title" module="iris">
+	                    <title>Import Simple Product</title>
+	                    <method>importSimpleProduct</method>
+                            <acl>iris/resource/importsimpleproduct</acl>
+	                </importsimpleproduct>
+	                <importsimpleproductforconfigurable translate="title" module="iris">
+	                    <title>Import Simple Product For Configurable</title>
+	                    <method>importSimpleProductForConfigurable</method>
+                            <acl>iris/resource/importsimpleproductforconfigurable</acl>
+	                </importsimpleproductforconfigurable>                               
+	                <importconfigurableproduct translate="title" module="iris">
+	                    <title>Import Configurable Product</title>
+	                    <method>importConfigurableProduct</method>
+                            <acl>iris/resource/importconfigurableproduct</acl>
+	                </importconfigurableproduct>                                           
+	                <duplicateproduct translate="title" module="iris">
+	                    <title>Duplicate Product</title>
+	                    <method>duplicateProduct</method>
+                            <acl>iris/resource/duplicateproduct</acl>
+	                </duplicateproduct>                                                
+	                <importbrand translate="title" module="iris">
+	                    <title>Import Brand</title>
+	                    <method>importBrand</method>
+                            <acl>iris/resource/importbrand</acl>
+	                </importbrand>                        
+	                <importstockexpiry translate="title" module="iris">
+	                    <title>Import Stock and Expiration</title>
+	                    <method>importStockExpiry</method>
+                            <acl>iris/resource/importstockexpiry</acl>
+	                </importstockexpiry>  
+	                <exportstockexpiry translate="title" module="iris">
+	                    <title>Export Stock and Expiration</title>
+	                    <method>exportStockExpiry</method>
+                            <acl>iris/resource/exportstockexpiry</acl>
+	                </exportstockexpiry>                                                 
+	                <updateorderstatus translate="title" module="iris">
+	                    <title>Update Order Status</title>
+	                    <method>updateOrderStatus</method>
+                            <acl>iris/resource/updateorderstatus</acl>
+	                </updateorderstatus>   
+	                <createshipment translate="title" module="iris">
+	                    <title>Create Shipment</title>
+	                    <method>createShipment</method>
+                            <acl>iris/resource/createShipment</acl>
+	                </createshipment>
+	                <updatelabels translate="title" module="iris">
+	                    <title>Update labels</title>
+	                    <method>updateLabels</method>
+                            <acl>iris/resource/updateProductsLabel</acl>
+	                </updatelabels>   
+	                <skusforlabel translate="title" module="iris">
+	                    <title>Skus for labels</title>
+	                    <method>skusForLabel</method>
+                            <acl>iris/resource/skusForLabel</acl>
+	                </skusforlabel>                                                                                                                                                                                                                                                           
+	                <changegroup translate="title" module="iris">
+	                    <title>Change Group</title>
+	                    <method>changeGroup</method>
+                            <acl>iris/resource/changeGroup</acl>
+	                </changegroup>   
+	                <productsexists translate="title" module="iris">
+	                    <title>Product Exists</title>
+	                    <method>productsExists</method>
+                            <acl>iris/resource/productsExists</acl>
+	                </productsexists>                                             
+	            </methods>          
+            </iris_resource>
+        </resources> 
+        <v2>
+            <resources_function_prefix>
+                <iris_resource>dataexchangeResource</iris_resource>
+            </resources_function_prefix>
+        </v2>
+        <acl>
+            <resources>
+                <iris translate="title" module="iris"> 
+                        <title>Vitamincenter Resources</title>
+	                <resource translate="title" module="iris">
+		            <title>Vitamincenter  Web Services</title>
+	                    <hello translate="title" module="iris">
+	                        <title>Hello</title>
+	                    </hello>
+	                    <exportorders translate="title" module="iris">
+	                        <title>Export Orders</title>
+	                    </exportorders>                            
+	                    <exporttest translate="title" module="iris">
+	                        <title>Export Test</title>
+	                    </exporttest>  
+                            <exportprices translate="title" module="iris">
+                                <title>Export Product Prices</title>
+                            </exportprices>                              
+                            <importsimpleproduct translate="title" module="iris">
+                                <title>Import Simple Product</title>
+                            </importsimpleproduct>                        
+                            <importsimpleproductforconfigurable translate="title" module="iris">
+                                <title>Import Simple Product For Configurable</title>
+                            </importsimpleproductforconfigurable>                                 
+                            <importconfigurableproduct translate="title" module="iris">
+                                <title>Import Configurable Product</title>
+                            </importconfigurableproduct>                                
+                            <duplicateproduct translate="title" module="iris">
+                                <title>Duplicate Product</title>
+                            </duplicateproduct>                                                
+                            <importbrand translate="title" module="iris">
+                                <title>Import Brand</title>
+                            </importbrand>                        
+                            <importstockexpiry translate="title" module="iris">
+                                <title>Import Stock and Expiration</title>
+                            </importstockexpiry>  
+                            <exportstockexpiry translate="title" module="iris">
+                                <title>Export Stock and Expiration</title>
+                            </exportstockexpiry>                                                 
+                            <updateorderstatus translate="title" module="iris">
+                                <title>Update Order Status</title>
+                            </updateorderstatus> 
+                            <createshipment translate="title" module="iris">
+                                <title>Create Shipment</title>
+                            </createshipment>                                                                                                                                               
+                            <updatelabels translate="title" module="iris">
+                                <title>Update Labels</title>
+                            </updatelabels>                               
+                            <skusforlabel translate="title" module="iris">
+                                <title>Skus for Labels</title>
+                            </skusforlabel>                             
+                            <changegroup translate="title" module="iris">
+                                <title>Change Group</title>
+                            </changegroup>  
+                            <productsexists translate="title" module="iris">
+                                <title>Products Exists</title>
+                            </productsexists>                                                                                       
+                        </resource>
+                </iris>
+            </resources>
+        </acl>   
+    </api>
+</config> 

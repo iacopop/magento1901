@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:typens="urn:{{var wsdl.name}}" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/"
+             name="{{var wsdl.name}}" targetNamespace="urn:{{var wsdl.name}}">
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:Magento">
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="http://schemas.xmlsoap.org/soap/encoding/" />
+            <complexType name="ReturnObject">
+                <all>
+                    <element name="result_code" type="xsd:string" />
+                    <element name="result_data" type="xsd:string" />                                        
+                </all>
+            </complexType>  
+            
+            <complexType name="ExportPrice">
+                <all>
+                    <element name="sku" type="xsd:string" />
+                    <element name="price" type="xsd:string" />
+                </all>
+            </complexType>      
+                  
+            <complexType name="ExportPrices">
+                <all>
+                    <element name="result_code" type="xsd:string" />
+                    <element name="exportPricesArray" type="typens:ArrayOfExportPrice"/>
+                </all>
+            </complexType>
+            
+            <complexType name="ArrayOfExportPrice">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:ExportPrice[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>     
+            
+            <complexType name="ExportStock">
+                <all>
+                    <element name="expiry" type="xsd:string" />
+                    <element name="qty" type="xsd:string" />
+                </all>
+            </complexType>      
+                  
+            <complexType name="ExportStocks">
+                <all>
+                    <element name="result_code" type="xsd:string" />
+                    <element name="exportStocksArray" type="typens:ArrayOfExportStock"/>
+                </all>
+            </complexType>
+            
+            <complexType name="ArrayOfExportStock">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:ExportStock[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>                                                                             
+                                                                                                                                                                                                         
+            <complexType name="ReturnObjectTest">
+                <all></all>
+            </complexType>                               
+            <complexType name="ArrayOfAttribute">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:Attribute[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="Attribute">
+                <all>
+                    <element name="attributeCode" type="xsd:string" />
+                    <element name="attributeValue" type="xsd:string" />
+                    <element name="storeId" type="xsd:string" />
+                </all>
+            </complexType>
+            <complexType name="SimpleProduct">
+                <all>
+                    <element name="sku" type="xsd:string" />
+                    <element name="name" type="xsd:string" />
+                    <element name="price" type="xsd:string" />
+                    
+                    <element name="name_eng" type="xsd:string" />
+                    <element name="custom_rating" type="xsd:string" />
+                    <element name="short_description" type="xsd:string" />
+                    <element name="short_description_eng" type="xsd:string" />
+                    <element name="description" type="xsd:string" />
+                    <element name="description_eng" type="xsd:string" />
+                    <element name="informazioni_nutrizionali" type="xsd:string" />
+                    <element name="informazioni_nutrizionali_eng" type="xsd:string" />
+                    <element name="caratteristiche" type="xsd:string" />
+                    <element name="caratteristiche_eng" type="xsd:string" />
+                    <element name="composizione" type="xsd:string" />
+                    <element name="composizione_eng" type="xsd:string" />
+                    <element name="modo_uso" type="xsd:string" />
+                    <element name="modo_uso_eng" type="xsd:string" />
+                    <element name="dosaggio_consigliato" type="xsd:string" />
+                    <element name="dosaggio_consigliato_eng" type="xsd:string" />
+                    <element name="avvertenze" type="xsd:string" />
+                    <element name="avvertenze_eng" type="xsd:string" />
+                    <element name="meta_title" type="xsd:string" />
+                    <element name="meta_title_eng" type="xsd:string" />
+                    <element name="meta_keyword" type="xsd:string" />
+                    <element name="meta_keyword_eng" type="xsd:string" />
+                    <element name="meta_description" type="xsd:string" />
+                    <element name="meta_description_eng" type="xsd:string" />
+                    <element name="weight" type="xsd:string" />
+                    <element name="visibile_anonimo" type="xsd:string" />
+                    <element name="brand" type="xsd:string" />
+                    <element name="iva" type="xsd:string" />
+                    <element name="category_ids" type="xsd:string" />                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                        
+                    <element name="attributeArray" type="typens:ArrayOfAttribute"/>
+                </all>
+            </complexType>
+            <complexType name="ArrayOfSimpleProduct">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:SimpleProduct[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ConfigurableProduct">
+                <all>
+                    <element name="sku" type="xsd:string" />
+                    <element name="name" type="xsd:string" />
+                    <element name="price" type="xsd:string" />
+                    
+                    <element name="name_eng" type="xsd:string" />
+                    <element name="custom_rating" type="xsd:string" />
+                    <element name="short_description" type="xsd:string" />
+                    <element name="short_description_eng" type="xsd:string" />
+                    <element name="description" type="xsd:string" />
+                    <element name="description_eng" type="xsd:string" />
+                    <element name="informazioni_nutrizionali" type="xsd:string" />
+                    <element name="informazioni_nutrizionali_eng" type="xsd:string" />
+                    <element name="caratteristiche" type="xsd:string" />
+                    <element name="caratteristiche_eng" type="xsd:string" />
+                    <element name="composizione" type="xsd:string" />
+                    <element name="composizione_eng" type="xsd:string" />
+                    <element name="modo_uso" type="xsd:string" />
+                    <element name="modo_uso_eng" type="xsd:string" />
+                    <element name="dosaggio_consigliato" type="xsd:string" />
+                    <element name="dosaggio_consigliato_eng" type="xsd:string" />
+                    <element name="avvertenze" type="xsd:string" />
+                    <element name="avvertenze_eng" type="xsd:string" />
+                    <element name="meta_title" type="xsd:string" />
+                    <element name="meta_title_eng" type="xsd:string" />
+                    <element name="meta_keyword" type="xsd:string" />
+                    <element name="meta_keyword_eng" type="xsd:string" />
+                    <element name="meta_description" type="xsd:string" />
+                    <element name="meta_description_eng" type="xsd:string" />
+                    <element name="weight" type="xsd:string" />
+                    <element name="visibile_anonimo" type="xsd:string" />
+                    <element name="brand" type="xsd:string" />
+                    <element name="iva" type="xsd:string" />
+                    <element name="category_ids" type="xsd:string" />                    
+                    
+                    <element name="configurableAttributes" type="xsd:string" />
+                    <element name="attributeArray" type="typens:ArrayOfAttribute"/>
+                    <element name="simpleProductArray" type="typens:ArrayOfSimpleProduct"/>
+                </all>
+            </complexType>    
+            <complexType name="BrandObject">
+                <all>
+                    <element name="code" type="xsd:string" />
+                    <element name="title" type="xsd:string" />
+                    <element name="title_eng" type="xsd:string" />
+                    <element name="description" type="xsd:string" />
+                    <element name="description_eng" type="xsd:string" />
+                    <element name="meta_description" type="xsd:string" />
+                    <element name="meta_description_eng" type="xsd:string" />
+                    <element name="name" type="xsd:string" />
+                    <element name="fascia_sconto" type="xsd:string" />
+                    <element name="immagine" type="xsd:string" />                                        
+                </all>
+            </complexType>  
+            
+            <complexType name="ArrayOfOrderExport">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:OrderExport[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="OrderHeader">
+                <all>
+                    <element name="created_at" type="xsd:string" />
+                    <element name="updated_at" type="xsd:string" />
+                    <element name="source" type="xsd:string" />
+                    <element name="increment_id" type="xsd:string" />
+                    <element name="status" type="xsd:string" />
+                    <element name="tracking_code" type="xsd:string" />
+                    <element name="coupon_code" type="xsd:string" />
+                    <element name="shipping_description" type="xsd:string" />
+                    <element name="store_id" type="xsd:string" />
+                    <element name="base_discount_amount" type="xsd:string" />
+                    <element name="base_grand_total" type="xsd:string" />
+                    <element name="base_shipping_amount" type="xsd:string" />
+                    <element name="base_shipping_tax_amount" type="xsd:string" />
+                    <element name="base_subtotal" type="xsd:string" />
+                    <element name="base_tax_amount" type="xsd:string" />
+                    <element name="base_to_global_rate" type="xsd:string" />
+                    <element name="base_to_order_rate" type="xsd:string" />
+                    <element name="discount_amount" type="xsd:string" />
+                    <element name="grand_total" type="xsd:string" />
+                    <element name="shipping_amount" type="xsd:string" />
+                    <element name="shipping_tax_amount" type="xsd:string" />
+                    <element name="subtotal" type="xsd:string" />
+                    <element name="tax_amount" type="xsd:string" />
+                    <element name="total_qty_ordered" type="xsd:string" />
+                    <element name="base_subtotal_incl_tax" type="xsd:string" />
+                    <element name="subtotal_incl_tax" type="xsd:string" />
+                    <element name="base_currency_code" type="xsd:string" />
+                    <element name="global_currency_code" type="xsd:string" />
+                    <element name="order_currency_code" type="xsd:string" />
+                    <element name="remote_ip" type="xsd:string" />
+                    <element name="payment_method" type="xsd:string" />
+                    <element name="shipping_method" type="xsd:string" />
+                    <element name="total_item_count" type="xsd:string" />
+                    <element name="shipping_incl_tax" type="xsd:string" />
+                    <element name="cod_fee" type="xsd:string" />
+                    <element name="base_cod_fee" type="xsd:string" />
+                    <element name="cod_tax_amount" type="xsd:string" />
+                    <element name="base_cod_tax_amount" type="xsd:string" />  
+                    <element name="anonymous_package" type="xsd:string" />                    
+                    <element name="base_money_for_points" type="xsd:string" />   
+                    <element name="points_balance_change" type="xsd:string" /> 
+                </all>
+            </complexType>
+            <complexType name="ArrayOfOrderRow">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:OrderRow[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="OrderRow">
+                <all>
+                    <element name="order_id" type="xsd:string" />
+                    <element name="sku" type="xsd:string" />
+                    <element name="name" type="xsd:string" />
+                    <element name="qty" type="xsd:string" />                    
+                    <element name="is_expiry" type="xsd:string" />                    
+                    <element name="date_expiry" type="xsd:string" />                                        
+                    <element name="base_cost" type="xsd:string" />
+                    <element name="price" type="xsd:string" />
+                    <element name="base_price" type="xsd:string" />
+                    <element name="original_price" type="xsd:string" />
+                    <element name="base_original_price" type="xsd:string" />
+                    <element name="tax_percent" type="xsd:string" />
+                    <element name="tax_amount" type="xsd:string" />
+                    <element name="base_tax_amount" type="xsd:string" />
+                    <element name="discount_amount" type="xsd:string" />
+                    <element name="base_discount_amount" type="xsd:string" />
+                    <element name="row_total" type="xsd:string" />
+                    <element name="base_row_total" type="xsd:string" />
+                    <element name="row_weight" type="xsd:string" />
+                    <element name="base_tax_before_discount" type="xsd:string" />
+                    <element name="price_incl_tax" type="xsd:string" />
+                    <element name="base_price_incl_tax" type="xsd:string" />
+                    <element name="base_row_total_incl_tax" type="xsd:string" />
+                </all>
+            </complexType>
+            <complexType name="OrderCustomer">
+                <all>
+                    <element name="customer_id" type="xsd:string" />
+                    <element name="vitamincenter_id" type="xsd:string" />
+                    <element name="customer_email" type="xsd:string" />
+                    <element name="customer_group" type="xsd:string" />
+                    <element name="billing_firstname" type="xsd:string" />
+                    <element name="billing_lastname" type="xsd:string" />
+                    <element name="billing_street" type="xsd:string" />
+                    <element name="biling_co" type="xsd:string" />
+                    <element name="billing_zipcode" type="xsd:string" />
+                    <element name="billing_city" type="xsd:string" />
+                    <element name="billing_region" type="xsd:string" />
+                    <element name="billing_nation" type="xsd:string" />
+                    <element name="billing_codice_fiscale" type="xsd:string" />
+                    <element name="billing_vat" type="xsd:string" />
+                    <element name="billing_company" type="xsd:string" />
+                    <element name="billing_phone" type="xsd:string" />
+                    <element name="shipping_firstname" type="xsd:string" />
+                    <element name="shipping_lastname" type="xsd:string" />
+                    <element name="shipping_street" type="xsd:string" />
+                    <element name="shipping_co" type="xsd:string" />
+                    <element name="shipping_zipcode" type="xsd:string" />
+                    <element name="shipping_city" type="xsd:string" />
+                    <element name="shipping_region" type="xsd:string" />
+                    <element name="shipping_nation" type="xsd:string" />
+                    <element name="shipping_phone" type="xsd:string" />
+                    <element name="billing_address_id" type="xsd:string" />
+                    <element name="shipping_address_id" type="xsd:string" />
+                    <element name="customer_type" type="xsd:string" />
+                </all>
+            </complexType>            
+            
+            <complexType name="OrderExport">
+                <all>
+                    <element name="header" type="typens:OrderHeader" />
+                    <element name="customer" type="typens:OrderCustomer" />
+                    <element name="rows" type="typens:ArrayOfOrderRow" />
+                </all>
+            </complexType>
+            <complexType name="OrderExportResult">
+                <all>
+                    <element name="result_code" type="xsd:string" />
+                    <element name="orders" type="typens:ArrayOfOrderExport" />
+                </all>
+            </complexType> 
+            
+                       
+            <complexType name="ArrayOfLabel">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:Label[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="Label">
+                <all>
+                    <element name="sku" type="xsd:string" />
+                    <element name="label" type="xsd:string" />
+                </all>
+            </complexType>
+            <complexType name="LabelsUpdate">
+                <all>
+                    <element name="labels" type="typens:ArrayOfLabel"/>
+                </all>
+            </complexType>  
+              
+
+            <complexType name="ArrayOfSkuExist">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:SkuExist[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="SkuExist">
+                <all>
+                    <element name="sku" type="xsd:string" />
+                    <element name="exist" type="xsd:string" />
+                </all>
+            </complexType>
+            <complexType name="SkuExistResult">
+                <all>
+                    <element name="skus" type="typens:ArrayOfSkuExist"/>
+                </all>
+            </complexType>                                                    
+          
+                                                                                 
+        </schema>
+    </types>
+    <!-- Hello -->    
+    <message name="dataexchangeResourceHelloRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="data" type="xsd:string" />        
+    </message>
+    <message name="dataexchangeResourceHelloResponse">
+        <part name="result" type="xsd:string" />
+    </message>
+    
+    <!-- Export Test -->    
+    <message name="dataexchangeResourceExporttestRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="orderId" type="xsd:string" />        
+        <part name="dateFrom" type="xsd:string" />
+        <part name="dateTo" type="xsd:string" />
+        <part name="status" type="xsd:string" />
+    </message>
+    <message name="dataexchangeResourceExporttestResponse">
+        <part name="result" type="typens:ReturnObject" />
+    </message>     
+    
+    <!-- Export Orders -->    
+    <message name="dataexchangeResourceExportordersRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="orderId" type="xsd:string" />        
+        <part name="dateFrom" type="xsd:string" />
+        <part name="dateTo" type="xsd:string" />
+        <part name="status" type="xsd:string" />
+    </message>
+    <message name="dataexchangeResourceExportordersResponse">
+        <part name="result" type="typens:OrderExportResult" />
+    </message>        
+            
+    <!-- Export Prices -->    
+    <message name="dataexchangeResourceExportpricesRequest">
+        <part name="sessionId" type="xsd:string" />    
+        <part name="dateFrom" type="xsd:string" />
+        <part name="dateTo" type="xsd:string" />
+    </message>
+    <message name="dataexchangeResourceExportpricesResponse">
+        <part name="result" type="typens:ExportPrices" />
+    </message>  
+    
+    <!-- Import Simple Product -->    
+    <message name="dataexchangeResourceImportsimpleproductRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="simple" type="typens:SimpleProduct"/>
+    </message>
+    <message name="dataexchangeResourceImportsimpleproductResponse">
+        <part name="result" type="typens:ReturnObject" />
+    </message> 
+    
+    <!-- Import Simple Product For Configurable -->    
+    <message name="dataexchangeResourceImportsimpleproductforconfigurableRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="simple" type="typens:SimpleProduct"/>
+        <part name="configurablesku" type="xsd:string" />
+    </message>
+    <message name="dataexchangeResourceImportsimpleproductforconfigurableResponse">
+        <part name="result" type="typens:ReturnObject" />
+    </message>     
+    
+    <!-- Import Configurable Product -->    
+    <message name="dataexchangeResourceImportconfigurableproductRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="configurable" type="typens:ConfigurableProduct"/>
+    </message>
+    <message name="dataexchangeResourceImportconfigurableproductResponse">
+        <part name="result" type="typens:ReturnObject" />
+    </message>             
+    
+    <!-- Duplicate Product -->    
+    <message name="dataexchangeResourceDuplicateproductRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="sku" type="xsd:string" />        
+    </message>
+    <message name="dataexchangeResourceDuplicateproductResponse">
+        <part name="result" type="typens:ReturnObject" />
+    </message>  
+    
+    <!-- Import Brand -->    
+    <message name="dataexchangeResourceImportbrandRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="brand" type="typens:BrandObject" />                  
+    </message>
+    <message name="dataexchangeResourceImportbrandResponse">
+        <part name="result" type="typens:ReturnObject" />
+    </message> 
+        
+    <!-- Import Stock and Expiry -->    
+    <message name="dataexchangeResourceImportstockexpiryRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="sku" type="xsd:string" />        
+        <part name="disponibilitaInScadenza" type="xsd:string" />
+        <part name="dataInScadenza" type="xsd:string" />
+        <part name="disponibilitaNonScadenza" type="xsd:string" />
+        <part name="dataNonScadenza" type="xsd:string" />                       
+    </message>
+    <message name="dataexchangeResourceImportstockexpiryResponse">
+        <part name="result" type="typens:ReturnObject" />
+    </message>
+    
+    <!-- Export Stock and Expiry -->    
+    <message name="dataexchangeResourceExportstockexpiryRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="sku" type="xsd:string" />
+    </message>
+    <message name="dataexchangeResourceExportstockexpiryResponse">
+        <part name="result" type="typens:ExportStocks" />
+    </message>  
+       
+    <!-- Update Order Status -->    
+    <message name="dataexchangeResourceUpdateorderstatusRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="order_id" type="xsd:string" />        
+        <part name="status" type="xsd:string" />
+    </message>
+    <message name="dataexchangeResourceUpdateorderstatusResponse">
+        <part name="result" type="typens:ReturnObject" />
+    </message> 
+    
+    <!-- Create Shipment -->    
+    <message name="dataexchangeResourceCreateshipmentRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="orderIncrementId" type="xsd:string" />        
+        <part name="shipmentTrackingNumber" type="xsd:string" />
+        <part name="customerEmailComments" type="xsd:string" />
+        <part name="shipmentCarrierCode" type="xsd:string" />        
+        <part name="shipmentCarrierTitle" type="xsd:string" />
+        <part name="send_email" type="xsd:string" />
+    </message>
+    <message name="dataexchangeResourceCreateshipmentResponse">
+        <part name="result" type="typens:ReturnObject" />
+    </message> 
+    
+    <!-- Updatelabels -->    
+    <message name="dataexchangeResourceUpdatelabelsRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="labels" type="typens:LabelsUpdate"/>
+    </message>
+    <message name="dataexchangeResourceUpdatelabelsResponse">
+        <part name="result" type="typens:ReturnObject" />
+    </message>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+                   
+    <!-- SkuForLabels -->    
+    <message name="dataexchangeResourceSkusforlabelRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="label" type="xsd:string"/>
+    </message>
+    <message name="dataexchangeResourceSkusforlabelResponse">
+        <part name="labels" type="typens:LabelsUpdate" />
+    </message>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    
+    <!-- Changegroup -->    
+    <message name="dataexchangeResourceChangegroupRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="email" type="xsd:string"/>
+        <part name="groupname" type="xsd:string"/>
+        <part name="type" type="xsd:string"/>
+    </message>
+    <message name="dataexchangeResourceChangegroupResponse">
+        <part name="result" type="typens:ReturnObject" />
+    </message> 
+    <!-- Product Exists -->    
+    <message name="dataexchangeResourceProductsexistsRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="skus" type="typens:SkuExistResult"/>
+    </message>
+    <message name="dataexchangeResourceProductsexistsResponse">
+        <part name="skus" type="typens:SkuExistResult" />
+    </message>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                            
+    <portType name="{{var wsdl.handler}}PortType">
+        <operation name="dataexchangeResourceHello">
+            <documentation>Hello Ws</documentation>
+            <input message="typens:dataexchangeResourceHelloRequest" />
+            <output message="typens:dataexchangeResourceHelloResponse" />
+        </operation>
+              
+        <operation name="dataexchangeResourceExporttest">
+            <documentation>Export test</documentation>
+            <input message="typens:dataexchangeResourceExporttestRequest" />
+            <output message="typens:dataexchangeResourceExporttestResponse" />
+        </operation>                
+        
+        <operation name="dataexchangeResourceExportorders">
+            <documentation>Export Orders</documentation>
+            <input message="typens:dataexchangeResourceExportordersRequest" />
+            <output message="typens:dataexchangeResourceExportordersResponse" />
+        </operation>  
+        
+        <operation name="dataexchangeResourceExportprices">
+            <documentation>Export prices</documentation>
+            <input message="typens:dataexchangeResourceExportpricesRequest" />
+            <output message="typens:dataexchangeResourceExportpricesResponse" />
+        </operation>   
+        
+        <operation name="dataexchangeResourceImportsimpleproduct">
+            <documentation>Import product</documentation>
+            <input message="typens:dataexchangeResourceImportsimpleproductRequest" />
+            <output message="typens:dataexchangeResourceImportsimpleproductResponse" />
+        </operation>  
+        
+        <operation name="dataexchangeResourceImportsimpleproductforconfigurable">
+            <documentation>Import product for configurable</documentation>
+            <input message="typens:dataexchangeResourceImportsimpleproductforconfigurableRequest" />
+            <output message="typens:dataexchangeResourceImportsimpleproductforconfigurableResponse" />
+        </operation>         
+        
+        <operation name="dataexchangeResourceImportconfigurableproduct">
+            <documentation>Import product</documentation>
+            <input message="typens:dataexchangeResourceImportconfigurableproductRequest" />
+            <output message="typens:dataexchangeResourceImportconfigurableproductResponse" />
+        </operation>          
+        
+        <operation name="dataexchangeResourceDuplicateproduct">
+            <documentation>Duplicate product</documentation>
+            <input message="typens:dataexchangeResourceDuplicateproductRequest" />
+            <output message="typens:dataexchangeResourceDuplicateproductResponse" />
+        </operation>  
+        
+        <operation name="dataexchangeResourceImportbrand">
+            <documentation>Import brand</documentation>
+            <input message="typens:dataexchangeResourceImportbrandRequest" />
+            <output message="typens:dataexchangeResourceImportbrandResponse" />
+        </operation> 
+        <operation name="dataexchangeResourceImportstockexpiry">
+            <documentation>Import stock</documentation>
+            <input message="typens:dataexchangeResourceImportstockexpiryRequest" />
+            <output message="typens:dataexchangeResourceImportstockexpiryResponse" />
+        </operation>   
+        <operation name="dataexchangeResourceExportstockexpiry">
+            <documentation>Export stock</documentation>
+            <input message="typens:dataexchangeResourceExportstockexpiryRequest" />
+            <output message="typens:dataexchangeResourceExportstockexpiryResponse" />
+        </operation>   
+        <operation name="dataexchangeResourceUpdateorderstatus">
+            <documentation>Import order status</documentation>
+            <input message="typens:dataexchangeResourceUpdateorderstatusRequest" />
+            <output message="typens:dataexchangeResourceUpdateorderstatusResponse" />
+        </operation>      
+        <operation name="dataexchangeResourceCreateshipment">
+            <documentation>create shipment</documentation>
+            <input message="typens:dataexchangeResourceCreateshipmentRequest" />
+            <output message="typens:dataexchangeResourceCreateshipmentResponse" />
+        </operation>
+        <operation name="dataexchangeResourceUpdatelabels">
+            <documentation>update labels</documentation>
+            <input message="typens:dataexchangeResourceUpdatelabelsRequest" />
+            <output message="typens:dataexchangeResourceUpdatelabelsResponse" />
+        </operation>                                                                                                                                                                                                                                                                      
+        <operation name="dataexchangeResourceSkusforlabel">
+            <documentation>sku for label</documentation>
+            <input message="typens:dataexchangeResourceSkusforlabelRequest" />
+            <output message="typens:dataexchangeResourceSkusforlabelResponse" />
+        </operation>                                                                                                                                                                                                                                                                                      
+        <operation name="dataexchangeResourceChangegroup">
+            <documentation>change group</documentation>
+            <input message="typens:dataexchangeResourceChangegroupRequest" />
+            <output message="typens:dataexchangeResourceChangegroupResponse" />
+        </operation> 
+        <operation name="dataexchangeResourceProductsexists">
+            <documentation>change group</documentation>
+            <input message="typens:dataexchangeResourceProductsexistsRequest" />
+            <output message="typens:dataexchangeResourceProductsexistsResponse" />
+        </operation>                                                                                                                                                                                                                                                                                             
+    </portType>
+    <binding name="{{var wsdl.handler}}Binding" type="typens:{{var wsdl.handler}}PortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="dataexchangeResourceHello">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>        
+        <operation name="dataexchangeResourceExporttest">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="dataexchangeResourceExportorders">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="dataexchangeResourceExportprices">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>   
+        <operation name="dataexchangeResourceImportsimpleproduct">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="dataexchangeResourceImportsimpleproductforconfigurable">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>        
+        <operation name="dataexchangeResourceImportconfigurableproduct">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>           
+        <operation name="dataexchangeResourceDuplicateproduct">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>   
+        <operation name="dataexchangeResourceImportbrand">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="dataexchangeResourceImportstockexpiry">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation> 
+        <operation name="dataexchangeResourceExportstockexpiry">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>  
+        <operation name="dataexchangeResourceUpdateorderstatus">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="dataexchangeResourceCreateshipment">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="dataexchangeResourceUpdatelabels">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>   
+        <operation name="dataexchangeResourceSkusforlabel">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>                     
+        <operation name="dataexchangeResourceChangegroup">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>   
+        <operation name="dataexchangeResourceProductsexists">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>                                                                                             
+    </binding>
+</definitions>

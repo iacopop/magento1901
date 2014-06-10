@@ -1,0 +1,6 @@
+Risorsa: http://stackoverflow.com/questions/2237513/magento-sort-by-date-added
+
+
+
+questo modulo aggiunge l'ordinamento per data di creazione e cambia l'ordinamento di default da entity_id ASC ad entity_id DESC
+quando non è settato un order esplicito

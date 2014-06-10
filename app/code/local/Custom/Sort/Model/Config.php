@@ -17,7 +17,7 @@ class Custom_Sort_Model_Config extends Mage_Catalog_Model_Config
     {
         $options = array(
             'position'  => Mage::helper('catalog')->__('Position'),
-            'created_at'  => Mage::helper('catalog')->__('Created at')
+            'created_at'  => Mage::helper('catalog')->__('Date')
         );
         foreach ($this->getAttributesUsedForSortBy() as $attribute) {
             /* @var $attribute Mage_Eav_Model_Entity_Attribute_Abstract */

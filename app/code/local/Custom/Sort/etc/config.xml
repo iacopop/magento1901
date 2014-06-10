@@ -24,6 +24,12 @@
             <custom_sort>
                 <class>Custom_Sort_Block</class>
             </custom_sort>
+            <!-- Rimosso un ordinamento custom -->
+            <catalog>
+                <rewrite>
+                    <product_list>Custom_Sort_Block_Catalog_Product_List</product_list>
+                </rewrite>
+            </catalog>
         </blocks>
         <helpers>
             <custom_sort>

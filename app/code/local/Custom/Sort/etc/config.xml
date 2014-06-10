@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Custom_Sort>
+            <version>0.1.0</version>
+        </Custom_Sort>
+    </modules>
+    <global>
+        <models>
+            <custom_sort>
+                <class>Custom_Sort_Model</class>
+                <resourceModel>custom_sort_resource</resourceModel>
+            </custom_sort>
+            <custom_sort_resource>
+                <class>Custom_Sort_Model_Resource</class>
+            </custom_sort_resource>
+            <catalog>
+                <rewrite>
+                    <config>Custom_Sort_Model_Config</config>
+                </rewrite>
+            </catalog>
+        </models>
+        <blocks>
+            <custom_sort>
+                <class>Custom_Sort_Block</class>
+            </custom_sort>
+        </blocks>
+        <helpers>
+            <custom_sort>
+                <class>Custom_Sort_Helper</class>
+            </custom_sort>
+        </helpers>
+    </global>
+</config>
